@@ -7,7 +7,7 @@ Every product guide on this site follows this format, so the guides look and wor
 ## 1. Site layout
 
 ```
-/                         ← master homepage (links to every guide)
+/index.html               ← master homepage (lists every guide from guides.json)
 ├── guides.json           ← list of guides, read by the homepage
 ├── .nojekyll             ← serve files as-is on GitHub Pages
 ├── GUIDE_FORMAT.md       ← this file
@@ -33,7 +33,7 @@ Every product guide on this site follows this format, so the guides look and wor
 
 ## 2. Registering a guide
 
-Add an entry to `guides.json` so the homepage can list it:
+The homepage (`/index.html`) builds its list of guides from `guides.json`, sorted by title and filterable by title, product, manual code and `keywords`. You don't need to edit `index.html` for a new guide, only add an entry to `guides.json`:
 
 ```json
 {
@@ -43,9 +43,12 @@ Add an entry to `guides.json` so the homepage can list it:
   "product": "Top-freezer refrigerator (RT**D* family)",
   "icon": "❄",
   "manual": "DA68-03374J-05",
-  "updated": "2026-11-15"
+  "updated": "2026-11-15",
+  "keywords": "refrigerator freezer"
 }
 ```
+
+`keywords` is optional. `folder` must end with `/`. Also update the static fallback list in `index.html`, which shows if `guides.json` can't be loaded (for example when the page is opened straight from disk).
 
 Put the same details in the guide's `<head>` (see the skeleton) so each page also describes itself.
 

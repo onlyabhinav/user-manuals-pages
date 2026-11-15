@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Product Guides</title>
+<meta name="description" content="Easy interactive guides for my home appliances and products.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="shared/guide.css">
+<style>
+  .home-hero{background:linear-gradient(135deg,var(--hero-from),var(--hero-to));color:#fff;border-radius:var(--radius);padding:28px 24px;margin-bottom:24px}
+  .home-hero h1{color:#fff}
+  .home-hero p{margin:6px 0 0;opacity:.92}
+  .filter{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;max-width:420px;margin:0 0 16px}
+  .filter:focus-within{border-color:var(--accent)}
+  .filter input{border:0;background:none;outline:none;flex:1;min-width:0}
+  a.guide-card{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:var(--text);transition:transform .15s,border-color .15s}
+  a.guide-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .guide-card .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:26px;flex:none;background:var(--accent-2-soft)}
+  .guide-card h3{margin:0 0 2px}
+  .guide-card p{margin:0;font-size:14px;color:var(--muted)}
+  .guide-card .meta{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+  .count{font-size:14px;color:var(--muted);margin:0 0 10px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><div class="brand-icon" aria-hidden="true">📘</div><span>Product Guides</span></div>
+    <span style="flex:1"></span>
+    <button class="icon-btn" id="themeBtn" type="button" title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</header>
+
+<main>
+  <div class="home-hero">
+    <h1>My product guides</h1>
+    <p>Easy, interactive versions of the manuals for things at home. Pick a product to get started.</p>
+  </div>
+
+  <label class="filter"><span aria-hidden="true">🔍</span>
+    <input id="filter" type="search" placeholder="Find a product…" aria-label="Filter guides" autocomplete="off">
+  </label>
+  <p class="count" id="count" aria-live="polite"></p>
+
+  <div class="grid cols-2" id="guides">
+    <!-- Fallback if guides.json can't be loaded; the script replaces this list. -->
+    <a class="card guide-card" href="fridge_guide/"><span class="ico" aria-hidden="true">❄</span>
+      <span><h3>Fridge Guide</h3><p>Top-freezer refrigerator (RT**D* family)</p></span></a>
+  </div>
+</main>
+
+<footer class="foot">
+  Unofficial guides based on owner’s manuals. Always follow the safety warnings in your printed manual.
+</footer>
+
+<script>
+(() => {
+  const list = document.getElementById('guides');
+  const filter = document.getElementById('filter');
+  const count = document.getElementById('count');
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  let guides = [];
+
+  /* Theme: same storage key as the guides, so the choice carries over */
+  try { const t = JSON.parse(localStorage.getItem('guides:theme')); if (t) document.documentElement.dataset.theme = t; } catch {}
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const cur = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('guides:theme', JSON.stringify(next)); } catch {}
+  });
+
+  function render() {
+    const words = filter.value.toLowerCase().split(/\s+/).filter(Boolean);
+    const shown = guides.filter(g => {
+      const hay = [g.title, g.product, g.manual, (g.keywords || '')].join(' ').toLowerCase();
+      return words.every(w => hay.includes(w));
+    });
+    list.innerHTML = shown.length ? shown.map(g => `
+      <a class="card guide-card" href="${esc(g.folder)}">
+        <span class="ico" aria-hidden="true">${esc(g.icon || '📘')}</span>
+        <span><h3>${esc(g.title)}</h3><p>${esc(g.product)}</p>
+          <span class="meta">${g.manual ? `<span class="chip">Manual ${esc(g.manual)}</span>` : ''}${g.updated ? `<span class="chip">Updated ${esc(g.updated)}</span>` : ''}</span>
+        </span>
+      </a>`).join('')
+      : `<div class="placeholder">No guides match “${esc(filter.value)}”.</div>`;
+    count.textContent = `${shown.length} of ${guides.length} guide${guides.length === 1 ? '' : 's'}`;
+  }
+
+  fetch('guides.json', { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      guides = data.slice().sort((a, b) => a.title.localeCompare(b.title));
+      render();
+      filter.addEventListener('input', render);
+    })
+    .catch(() => { filter.closest('label').hidden = true; });  // keep the static fallback list
+})();
+</script>
+</body>
+</html>
