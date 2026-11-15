@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fridge Guide</title>
+<meta name="description" content="Easy interactive guide for a top-freezer refrigerator with Freezer Convert: controls, troubleshooting, installation and care.">
+<!-- guide:meta (read by the root homepage; see GUIDE_FORMAT.md) -->
+<meta name="guide:title" content="Fridge Guide">
+<meta name="guide:product" content="Top-freezer refrigerator (RT**D* family)">
+<meta name="guide:icon" content="❄">
+<meta name="guide:manual" content="DA68-03374J-05">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄</text></svg>">
+<link rel="stylesheet" href="../shared/guide.css">
+<link rel="stylesheet" href="panel.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="back" href="../" title="All guides" aria-label="All guides">←</a>
+    <div class="brand"><div class="brand-icon" aria-hidden="true">❄</div><span class="brand-text">Fridge Guide</span></div>
+    <div class="search">
+      <label class="search-box"><span aria-hidden="true">🔍</span>
+        <input id="searchInput" type="search" placeholder="Search: too cold, vacation, clean shelf…" aria-label="Search this guide" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+      </label>
+      <ul class="search-results" id="searchResults" role="listbox"></ul>
+    </div>
+    <button class="icon-btn" id="themeBtn" type="button" title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Guide sections">
+    <button role="tab" type="button" data-view="home" aria-selected="true"><span class="ti" aria-hidden="true">🏠</span>Home</button>
+    <button role="tab" type="button" data-view="controls"><span class="ti" aria-hidden="true">🎛️</span>Controls</button>
+    <button role="tab" type="button" data-view="fix"><span class="ti" aria-hidden="true">🛠️</span>Fix it</button>
+    <button role="tab" type="button" data-view="setup"><span class="ti" aria-hidden="true">📦</span>Setup</button>
+    <button role="tab" type="button" data-view="care"><span class="ti" aria-hidden="true">🧽</span>Care</button>
+    <button role="tab" type="button" data-view="safety"><span class="ti" aria-hidden="true">🛡️</span>Safety</button>
+  </nav>
+</header>
+
+<main>
+<!-- ============================== HOME ============================== -->
+<section class="view active" id="home" role="tabpanel">
+  <div class="hero">
+    <div class="hero-main">
+      <div>
+        <span class="chip">Top-freezer · Freezer Convert</span>
+        <h1>What do you need help with?</h1>
+        <p>Your fridge manual, rewritten as short answers you can tap through.</p>
+      </div>
+      <button class="btn" type="button" data-go="controls">Try the control panel →</button>
+    </div>
+    <div class="facts">
+      <div class="card fact"><span class="muted">Freezer default</span><span class="big" style="color:var(--accent-2)">-19°C</span><span class="sub">range -15 to -23 °C</span></div>
+      <div class="card fact"><span class="muted">Fridge default</span><span class="big" style="color:var(--accent)">3°C</span><span class="sub">range 1 to 7 °C</span></div>
+      <div class="card fact wide"><span class="muted">Helpline</span><strong><a href="tel:180057267864">1800 5 7267864</a></strong><span class="sub">Keep your proof of purchase for warranty claims</span></div>
+    </div>
+  </div>
+
+  <h2>Common tasks</h2>
+  <div class="grid cols-3">
+    <button class="card task" type="button" data-go="controls"><span class="ico tone-sky">🌡️</span><span><h3>Change the temperature</h3><p>Freezer, fridge, Power Cool, Vacation</p></span></button>
+    <button class="card task" type="button" data-go="fix"><span class="ico tone-red">🚨</span><span><h3>Something’s wrong</h3><p>Warm, too cold, smells, alarm, Wi-Fi</p></span></button>
+    <button class="card task" type="button" data-go="controls" data-anchor="convert"><span class="ico tone-blue">🔄</span><span><h3>Use the freezer as a fridge</h3><p>Freezer Convert, step by step</p></span></button>
+    <button class="card task" type="button" data-go="setup"><span class="ico tone-green">📦</span><span><h3>Install the fridge</h3><p>6-step checklist with progress</p></span></button>
+    <button class="card task" type="button" data-go="care"><span class="ico tone-amber">🧽</span><span><h3>Clean &amp; remove parts</h3><p>Shelves, drawer, door bins</p></span></button>
+    <button class="card task" type="button" data-go="fix" data-anchor="sounds"><span class="ico">🔊</span><span><h3>Is this noise normal?</h3><p>Clicking, hissing, bubbling, cracking</p></span></button>
+  </div>
+
+  <h2>Know your fridge</h2>
+  <div class="card map" data-topic="Parts of the fridge" data-keywords="shelf drawer bin egg bottle ice maker filter">
+    <svg viewBox="0 0 220 400" role="img" aria-label="Fridge with door open, numbered parts">
+      <rect x="10" y="6" width="140" height="388" rx="12" fill="var(--surface-2)" stroke="var(--line)" stroke-width="2"/>
+      <rect x="20" y="16" width="120" height="110" rx="6" fill="var(--accent-2-soft)" stroke="var(--line)"/>
+      <rect x="20" y="138" width="120" height="246" rx="6" fill="var(--surface)" stroke="var(--line)"/>
+      <line x1="24" y1="56" x2="136" y2="56" stroke="var(--muted)" stroke-width="2"/>
+      <rect x="34" y="66" width="44" height="26" rx="3" fill="none" stroke="var(--muted)"/>
+      <line x1="24" y1="196" x2="136" y2="196" stroke="var(--muted)" stroke-width="2"/>
+      <line x1="24" y1="248" x2="136" y2="248" stroke="var(--muted)" stroke-width="2"/>
+      <rect x="66" y="254" width="30" height="8" rx="2" fill="var(--muted)" opacity=".5"/>
+      <line x1="24" y1="300" x2="136" y2="300" stroke="var(--muted)" stroke-width="2"/>
+      <rect x="26" y="308" width="108" height="70" rx="6" fill="none" stroke="var(--muted)"/>
+      <path d="M150 6 L210 22 L210 378 L150 394 Z" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+      <line x1="150" y1="132" x2="210" y2="136" stroke="var(--line)" stroke-width="2"/>
+      <line x1="156" y1="96" x2="204" y2="102" stroke="var(--muted)" stroke-width="3"/>
+      <line x1="156" y1="186" x2="204" y2="190" stroke="var(--muted)" stroke-width="3"/>
+      <line x1="156" y1="240" x2="204" y2="242" stroke="var(--muted)" stroke-width="3"/>
+      <line x1="156" y1="320" x2="204" y2="318" stroke="var(--muted)" stroke-width="3"/>
+      <g id="hots"></g>
+    </svg>
+    <div>
+      <h3 id="partTitle">Tap a number</h3>
+      <p class="muted" id="partDesc">See what each part is and how to remove or use it. Parts and layout vary by model; * applicable models only.</p>
+      <ul class="parts" id="partsList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTROLS ============================== -->
+<section class="view" id="controls" role="tabpanel">
+  <h1>Control panel</h1>
+  <p class="lead">This works like the real panel. <b>Tap</b> to change a setting, <b>press and hold</b> for the special modes.</p>
+
+  <div class="sim" id="panelSim" data-topic="Control panel simulator" data-keywords="buttons display panel">
+    <div>
+      <div class="panel">
+        <div class="display" aria-live="polite">
+          <div class="pcol" id="fzCol"><span class="lbl">Freezer</span></div>
+          <div class="pcol" id="midCol"><span class="lbl">Convert</span></div>
+          <div class="pcol" id="frCol"><span class="lbl">Fridge</span></div>
+        </div>
+        <div class="pbuttons">
+          <button class="pbtn" type="button" data-btn="freezer"><b>Freezer</b><small>tap</small><span class="fill"></span></button>
+          <button class="pbtn" type="button" data-btn="convert"><b>Freezer Convert</b><small>hold 3 s</small><span class="fill"></span></button>
+          <button class="pbtn" type="button" data-btn="fridge"><b>Fridge</b><small>tap · hold 3 s / 10 s</small><span class="fill"></span></button>
+        </div>
+        <div class="sim-hint" id="simHint">Try: tap Freezer a few times</div>
+      </div>
+      <div class="door-row">
+        <button class="chip" type="button" id="doorBtn">🚪 Leave the door open</button>
+        <button class="chip" type="button" id="resetSim">↺ Reset to defaults</button>
+      </div>
+    </div>
+    <div class="stack sim-explain">
+      <div class="card now" id="nowCard"><span class="chip">What just happened</span><h3 id="nowTitle">Factory defaults</h3><p class="muted" id="nowText">Freezer -19 °C, Fridge 3 °C. Press any button to see what it does.</p></div>
+      <div id="nowCallouts"></div>
+      <div class="card"><h3>Your presses</h3><ol class="sim-log" id="simLog"><li>Ready.</li></ol></div>
+    </div>
+  </div>
+
+  <h2>What each button does</h2>
+  <div class="grid cols-3">
+    <div class="card" data-topic="Set the freezer temperature" data-keywords="freezer colder warmer">
+      <span class="chip accent">Tap Freezer</span><h3>Freezer temperature</h3>
+      <p class="small muted">Each press goes one step colder: -15 → -17 → -19 → -21 → -23 °C, then back to -15. Default -19 °C.</p>
+      <div class="callout caution small"><span aria-hidden="true">⚠</span><span>Don’t use -15 °C in summer (above 35 °C). Don’t put glass bottles of liquid in the freezer: they crack when frozen.</span></div>
+    </div>
+    <div class="card" data-topic="Set the fridge temperature" data-keywords="fridge colder warmer">
+      <span class="chip accent">Tap Fridge</span><h3>Fridge temperature</h3>
+      <p class="small muted">Each press goes one step colder: 7 → 4 → 3 → 2 → 1 °C → Vacation. Default 3 °C.</p>
+      <div class="callout caution small"><span aria-hidden="true">⚠</span><span>Avoid 1 °C in winter and 5–7 °C in summer: both can hurt cooling.</span></div>
+    </div>
+    <div class="card" id="powercool" data-topic="Power Cool" data-keywords="fast cool quick chill groceries">
+      <span class="chip accent">Hold Fridge 3 s</span><h3>Power Cool</h3>
+      <p class="small muted">Runs the fan at full speed for several hours to chill new food fast, then returns to your setting. Hold 3 s again to stop early.</p>
+      <p class="small muted">Uses more electricity, so turn it off if you don’t need it.</p>
+    </div>
+    <div class="card" id="vacation" data-topic="Vacation mode" data-keywords="holiday trip away travel">
+      <span class="chip accent">Tap Fridge past 1 °C</span><h3>Vacation mode</h3>
+      <p class="small muted">For trips. The fridge is kept under 17 °C; the freezer keeps working. Press Fridge again to exit (goes to 7 °C).</p>
+      <p class="small muted">Empty the fridge compartment and close the door first.</p>
+    </div>
+    <div class="card" data-topic="Turn Wi-Fi on or off" data-keywords="wifi wireless network">
+      <span class="chip accent">Hold Fridge 10 s</span><h3>Wi-Fi on / off</h3>
+      <p class="small muted">The Wi-Fi icon blinks for 5 s, then stays on (or turns off). A blinking icon when you open the door means the fridge isn’t connected to the app yet.</p>
+    </div>
+    <div class="card" data-topic="AI Energy mode" data-keywords="energy saving app leaf">
+      <span class="chip accent">In the app</span><h3>AI Energy mode</h3>
+      <p class="small muted">Turn on in SmartThings (Energy menu). A 🍃 icon shows on the panel while it runs. Saves energy but may reduce cooling a little.</p>
+    </div>
+  </div>
+
+  <h2 id="convert" data-topic="Freezer Convert: use the freezer as a fridge" data-keywords="convert freezer fridge mode switch">Freezer Convert</h2>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>Switch the freezer to Fridge mode</h3>
+      <ol class="steps-list">
+        <li>Take all frozen food out of the freezer.</li>
+        <li>Press and hold <b>Freezer Convert</b> for 3 seconds. The indicator blinks.</li>
+        <li>Tap <b>Freezer Convert</b> until <b>💧 Fridge</b> is lit.</li>
+        <li>Wait 10 seconds. The change is applied.</li>
+      </ol>
+      <p class="small muted">To switch back: take chilled food out, hold for 3 s, tap until <b>Off</b> (Freezer) is lit, and wait. The freezer restarts at -19 °C.</p>
+    </div>
+    <div class="stack">
+      <div class="callout warning"><span aria-hidden="true">⛔</span><span><strong>Before you switch</strong><ul><li>Frozen food will thaw and spoil in Fridge mode.</li><li>Chilled food will freeze when you switch back.</li><li>Never leave glass bottles of liquid in the freezer: they can burst.</li></ul></span></div>
+      <div class="callout note"><span aria-hidden="true">ℹ</span><span><strong>Normal after converting</strong>Dew may form on the inner walls as it warms up. Use plastic containers, especially for vegetables.</span></div>
+    </div>
+  </div>
+
+  <h2 id="ice" data-topic="Make ice (twist ice maker)" data-keywords="ice cubes tray">Make ice</h2>
+  <div class="card">
+    <p class="small muted">Twist ice maker, some models only.</p>
+    <ol class="steps-list">
+      <li>Open the freezer door and slide out the ice tray.</li>
+      <li>Fill with water up to the <b>max line</b> on the inner back of the tray.</li>
+      <li>Slide the tray back in. Time to freeze depends on your temperature setting.</li>
+      <li>Check the storage bin is in place, then turn the handle to the right to drop the cubes in.</li>
+    </ol>
+    <p class="small muted">Pull the bin forward to take it out. If the ice maker doesn’t fit under the shelf, put it on the freezer shelf.</p>
+  </div>
+
+  <h2 id="smartthings" data-topic="Connect to the SmartThings app" data-keywords="app phone wifi smartthings samsung account remote">SmartThings app</h2>
+  <p class="muted small">Some models only. Lets you check and control the fridge from your phone.</p>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>Connect your fridge</h3>
+      <ol class="steps-list">
+        <li>Install <b>SmartThings</b> from Google Play, Galaxy Store or the App Store.</li>
+        <li>Sign in with a Samsung account (the app helps you make one for free).</li>
+        <li>Make sure the fridge’s Wi-Fi is on (hold <b>Fridge</b> 10 s).</li>
+        <li>Open the app. When it says a new device was found, tap <b>ADD NOW</b>. If not, tap <b>+</b> and choose the fridge.</li>
+        <li>Not listed? Tap <b>Supported Devices</b> → Refrigerator → your model.</li>
+        <li>Follow the steps in the app. The fridge then shows as a card on your Devices screen.</li>
+      </ol>
+      <p class="small muted">Works with 2.4 GHz Wi-Fi (802.11 b/g/n; n recommended) and WPA/TKIP or WPA2/AES security.</p>
+    </div>
+    <div class="card">
+      <h3>What you can do in the app</h3>
+      <div class="table-wrap"><table>
+        <tr><th>Feature</th><th>What it does</th></tr>
+        <tr><td>Fridge temperature</td><td>See the current setting</td></tr>
+        <tr><td>Energy monitoring</td><td>Power use over the last 180 days</td></tr>
+        <tr><td>Power Cool</td><td>Turn on or off</td></tr>
+        <tr><td>Power Freeze*</td><td>Max-speed freezing for 50 hours. For lots of food, start it 20 hours before</td></tr>
+        <tr><td>Door alarm</td><td>Alert when a door is open over 2 minutes</td></tr>
+        <tr><td>AI Energy mode*</td><td>Lower energy use</td></tr>
+      </table></div>
+      <p class="small muted">* Some models only. App problems? <a href="#fix" data-go="fix">See Fix it →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FIX IT ============================== -->
+<section class="view" id="fix" role="tabpanel">
+  <h1>Fix it</h1>
+  <p class="lead">Pick what you’re noticing, then tick off each check. Most problems are fixed before you need to call service.</p>
+  <div id="ts"></div>
+
+  <h2 id="sounds" data-topic="Is this noise normal?" data-keywords="sound noise clicking buzzing hissing bubbling cracking whoosh whir">Is this noise normal?</h2>
+  <p class="muted">All of these are normal. A service visit for a normal sound may be charged.</p>
+  <details class="acc"><summary>🚗 Clicking, chirping or buzzing when it starts or stops</summary><div class="acc-body"><p>The compressor starting or stopping, a bit like a car engine. It fades as the fridge settles.</p></div></details>
+  <details class="acc"><summary>🌀 Whirring or “sssrrr” sounds</summary><div class="acc-body"><p>The fan is running. It stops once the fridge reaches the set temperature.</p></div></details>
+  <details class="acc"><summary>💨 Sizzling or hissing</summary><div class="acc-body"><p>During defrosting, water drips onto the defrost heater.</p></div></details>
+  <details class="acc"><summary>🫖 Bubbling or gurgling</summary><div class="acc-body"><p>Refrigerant flowing through the sealed pipes as it cools.</p></div></details>
+  <details class="acc"><summary>🪵 Cracking or knocking</summary><div class="acc-body"><p>Plastic parts shrinking and expanding as the temperature changes, mostly during defrost.</p></div></details>
+  <details class="acc"><summary>🐝 Buzzing (ice maker models)</summary><div class="acc-body"><p>The water valve opening to fill the ice maker.</p></div></details>
+  <details class="acc"><summary>🚪 Whooshing when you open or close the door</summary><div class="acc-body"><p>Air pressure evening out.</p></div></details>
+
+  <h2 id="power-cut" data-topic="Power cut: what to do" data-keywords="power failure outage electricity cut">Power cut</h2>
+  <div class="card">
+    <ul>
+      <li>Ask your electricity company how long it will last.</li>
+      <li>Cuts of an hour or two won’t affect the temperature much. Open the doors as little as possible.</li>
+      <li>If the power is off for more than 24 hours, throw out all frozen food.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== SETUP ============================== -->
+<section class="view" id="setup" role="tabpanel">
+  <h1>Install checklist</h1>
+  <p class="lead">Work through each step. Tap the number to mark it done. Your progress is saved on this device.</p>
+  <div class="card" data-topic="Installation steps" data-keywords="install level feet spacing clearance floor plug">
+    <div id="setupChecklist"></div>
+  </div>
+
+  <h2 data-topic="Climate class and room temperature" data-keywords="ambient temperature class SN N ST T">Room temperature it works in</h2>
+  <p class="muted small">The fridge is built for the room-temperature range of its climate class (shown on the rating label).</p>
+  <div class="table-wrap"><table>
+    <tr><th>Class</th><th>Symbol</th><th class="num">Room temperature</th></tr>
+    <tr><td>Extended temperate</td><td>SN</td><td class="num">+10 to +32 °C</td></tr>
+    <tr><td>Temperate</td><td>N</td><td class="num">+16 to +32 °C</td></tr>
+    <tr><td>Subtropical</td><td>ST</td><td class="num">+16 to +38 °C</td></tr>
+    <tr><td>Tropical</td><td>T</td><td class="num">+16 to +43 °C</td></tr>
+  </table></div>
+  <div class="callout note"><span aria-hidden="true">ℹ</span><span>Need more freezer space? You can take out the shelf, ice maker and ice bin by hand. It doesn’t affect cooling. For best efficiency, keep shelves and drawers in their original places.</span></div>
+</section>
+
+<!-- ============================== CARE ============================== -->
+<section class="view" id="care" role="tabpanel">
+  <h1>Care &amp; cleaning</h1>
+  <p class="lead">How to take parts out, clean safely and save energy.</p>
+
+  <h2>Take parts out</h2>
+  <div class="grid cols-3">
+    <div class="card" id="care-shelves" data-topic="Remove a shelf" data-keywords="shelf glass take out remove insert">
+      <h3>Shelves (fridge &amp; freezer)</h3>
+      <ol class="steps-list"><li>Hold with both hands.</li><li>Lift to free it from the rear hook.</li><li>Tilt to one side and pull out.</li></ol>
+      <p class="small muted">To put it back, check the shape of the back edge and reverse the steps.</p>
+      <div class="callout caution small"><span aria-hidden="true">⚠</span><span>Shelves are heavy. Never insert one upside down or back to front: it could drop.</span></div>
+    </div>
+    <div class="card" id="care-veg" data-topic="Remove the vegetable drawer" data-keywords="drawer crisper vegetable shelf">
+      <h3>Vegetable drawer &amp; shelf</h3>
+      <p class="small"><b>Drawer:</b> gently lift the front and slide it out.</p>
+      <p class="small"><b>Shelf above it:</b> hold with both hands, lift off the rear hook, tilt and pull out.</p>
+    </div>
+    <div class="card" id="care-bins" data-topic="Remove a door bin" data-keywords="door bin guard bottle egg">
+      <h3>Door bins</h3>
+      <ol class="steps-list"><li>Empty the bin.</li><li>Press gently on its sides.</li><li>Lift it straight up.</li></ol>
+      <div class="callout caution small"><span aria-hidden="true">⚠</span><span>Always empty bins first to avoid accidents.</span></div>
+    </div>
+  </div>
+  <div class="callout note"><span aria-hidden="true">ℹ</span><span>After cleaning, check the <a href="#home" data-go="home">parts map</a> to make sure everything is back in the right place.</span></div>
+
+  <h2 id="cleaning" data-topic="Clean the fridge" data-keywords="clean wash wipe detergent">Cleaning</h2>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>Regular cleaning</h3>
+      <ol class="steps-list">
+        <li>Unplug the fridge.</li>
+        <li>Wipe inside and out with a damp, soft, lint-free cloth or paper towel. Mild detergent in warm water is fine.</li>
+        <li>Dry well with a dry cloth.</li>
+        <li>Wipe dust off the plug pins with a dry cloth, then plug back in.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Never use</h3>
+      <ul class="dont">
+        <li>Benzene, thinner, bleach (Clorox), or car/home detergents</li>
+        <li>Abrasive cleaners, window sprays, waxes or flammable fluids</li>
+        <li>Water sprayed directly onto the fridge</li>
+        <li>Warm water on cold glass shelves: they can crack</li>
+        <li>A hair dryer to dry inside, or candles to remove smells</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="lamps" data-topic="Replace the light (LED lamp)" data-keywords="light bulb lamp led replace">Inside light</h2>
+  <div class="callout warning"><span aria-hidden="true">⛔</span><span><strong>LED lamps aren’t user-replaceable</strong>Don’t try to change them yourself (risk of electric shock). Contact a Samsung service centre.</span></div>
+
+  <h2 id="energy" data-topic="Save energy" data-keywords="energy electricity bill save efficient">Save energy</h2>
+  <div class="card">
+    <ul class="do">
+      <li>Keep it in a cool, dry, well-ventilated room, away from sunlight and heaters.</li>
+      <li>Don’t block vents or grilles.</li>
+      <li>Let warm food cool down before putting it in.</li>
+      <li>Thaw frozen food in the fridge: it helps keep the fridge cold.</li>
+      <li>Close the door quickly. Shorter openings also mean less frost.</li>
+      <li>Leave space at the back and sides.</li>
+      <li>Keep baskets, drawers and shelves where they came from the factory.</li>
+    </ul>
+    <p class="small muted">The fridge is frost-free: it defrosts itself. Don’t refreeze food that has fully thawed.</p>
+  </div>
+</section>
+
+<!-- ============================== SAFETY ============================== -->
+<section class="view" id="safety" role="tabpanel">
+  <h1>Safety essentials</h1>
+  <p class="lead">The most important warnings from the manual, grouped. The printed manual has the full list.</p>
+
+  <div class="grid cols-3" style="margin-bottom:16px">
+    <div class="callout warning" style="margin:0"><span aria-hidden="true">⛔</span><span><strong>Warning</strong>Could cause serious injury, death or damage.</span></div>
+    <div class="callout caution" style="margin:0"><span aria-hidden="true">⚠</span><span><strong>Caution</strong>Could cause injury or damage to property.</span></div>
+    <div class="callout note" style="margin:0"><span aria-hidden="true">ℹ</span><span><strong>Note</strong>Useful information.</span></div>
+  </div>
+
+  <details class="acc" open data-topic="Flammable refrigerant gas (R-600a)" data-keywords="gas leak refrigerant isobutane fire">
+    <summary>🔥 Refrigerant gas &amp; gas leaks</summary>
+    <div class="acc-body">
+      <p>This fridge may use isobutane (R-600a): environmentally friendly but flammable. Check the label on the back or inside.</p>
+      <ul class="dont"><li>Never damage the refrigerant pipes, especially when moving or installing.</li><li>Don’t store flammable things (gas, alcohol, benzene, aerosols) in or near it.</li></ul>
+      <div class="callout warning"><span aria-hidden="true">⛔</span><span><strong>If you suspect a gas leak</strong>Keep flames and sparks away, air the room for several minutes, don’t touch the plug or any switches, and call service.</span></div>
+    </div>
+  </details>
+  <details class="acc" data-topic="Electrical safety" data-keywords="plug socket cord power strip electric shock">
+    <summary>🔌 Power cord &amp; socket</summary>
+    <div class="acc-body">
+      <ul class="do"><li>Plug into its own earthed wall socket that matches the rating label.</li><li>Keep plug pins clean and dry.</li><li>Unplug before cleaning or maintenance.</li></ul>
+      <ul class="dont"><li>Multi-plug power strips, or loose wall sockets</li><li>Bending, twisting, tying or crushing the cord</li><li>Pushing the cord behind the fridge</li><li>Touching the plug with wet hands</li><li>Using a cracked or damaged cord: have service replace it</li></ul>
+    </div>
+  </details>
+  <details class="acc" data-topic="Where to install safely" data-keywords="damp water sunlight heat location">
+    <summary>📍 Where to put it</summary>
+    <div class="acc-body">
+      <ul class="dont"><li>Damp places or where it can get wet</li><li>Direct sunlight, or near stoves and heaters</li><li>Covering the ventilation openings</li></ul>
+    </div>
+  </details>
+  <details class="acc" data-topic="Children and the fridge" data-keywords="kids child baby trapped door">
+    <summary>🧒 Children</summary>
+    <div class="acc-body">
+      <ul class="dont"><li>Don’t let children play with it, hang on the door, climb in or stand on drawers.</li><li>Keep fingers away from door gaps (pinch points).</li><li>Keep packaging, especially plastic bags, away from children.</li></ul>
+      <div class="callout warning"><span aria-hidden="true">⛔</span><span><strong>Throwing out an old fridge?</strong>Take off the doors and seals so a child can’t get trapped inside. Leave the shelves in place.</span></div>
+    </div>
+  </details>
+  <details class="acc" data-topic="Using the fridge safely" data-keywords="usage food medicine overfill">
+    <summary>🥫 Everyday use</summary>
+    <div class="acc-body">
+      <ul class="dont"><li>Don’t overfill: things can fall out when you open the door.</li><li>Don’t put containers of water on top of the fridge.</li><li>Don’t store medicines or anything that needs exact temperatures.</li><li>Don’t use electrical appliances inside unless the manufacturer approves them.</li><li>Don’t use tools to speed up defrosting.</li><li>Don’t put your hands under the bottom of the fridge: there are sharp edges.</li></ul>
+      <div class="callout warning"><span aria-hidden="true">⛔</span><span>Smell burning or smoke, or water gets inside? Unplug it at once and call service.</span></div>
+    </div>
+  </details>
+  <details class="acc" data-topic="Disposal and recycling" data-keywords="dispose recycle weee e-waste">
+    <summary>♻️ Disposal</summary>
+    <div class="acc-body">
+      <p>Don’t throw it out with household waste. Recycle the packaging and the fridge separately, and make sure the pipes on the back aren’t damaged. For collection, call <a href="tel:1800407267864">1800 40 7267864</a> or visit samsung.com/in/support.</p>
+    </div>
+  </details>
+
+  <h2 id="warranty" data-topic="Warranty and service" data-keywords="warranty guarantee repair service helpline contact">Warranty &amp; service</h2>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>Get help</h3>
+      <div class="table-wrap"><table>
+        <tr><th>Helpline</th><td><a href="tel:180057267864">1800 5 7267864</a> · <a href="tel:1800407267864">1800 40 7267864</a></td></tr>
+        <tr><th>Website</th><td><a href="https://www.samsung.com/in/support" rel="noopener" target="_blank">samsung.com/in/support</a></td></tr>
+      </table></div>
+    </div>
+    <div class="card">
+      <h3>Before you claim</h3>
+      <ul class="small">
+        <li>Keep your proof of purchase: you need it to claim warranty.</li>
+        <li>Only authorised service centres can repair it under warranty.</li>
+        <li>Damage from misuse, tampering or wrong installation isn’t covered.</li>
+        <li>Visits for normal situations (no defect) may be charged.</li>
+      </ul>
+      <p class="small muted">See the warranty card in your manual for the full terms and coverage periods.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  Unofficial easy guide based on owner’s manual DA68-03374J-05. Features vary by model. Always follow the safety warnings in your printed manual.
+  <br><a href="../">← All guides</a>
+</footer>
+
+<script src="../shared/guide.js"></script>
+<script src="data.js"></script>
+<script src="panel.js"></script>
+</body>
+</html>
